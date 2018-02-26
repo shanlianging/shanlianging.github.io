@@ -96,7 +96,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/26/Object-C_UI_根视图控制器和tag值/index.html">
 <meta property="og:site_name" content="闪亮∮天使">
 <meta property="og:description" content="Object-CUI根视图控制器和tag值1、初始创建根试图控制器1234self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];[self.window setBackgroundColor:[UIColor whiteColor]];[self.window makeKeyAndVisible];[">
-<meta property="og:updated_time" content="2018-02-26T09:57:17.000Z">
+<meta property="og:updated_time" content="2018-02-26T10:01:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Object-C_UI_根视图控制器和tag值">
 <meta name="twitter:description" content="Object-CUI根视图控制器和tag值1、初始创建根试图控制器1234self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];[self.window setBackgroundColor:[UIColor whiteColor]];[self.window makeKeyAndVisible];[">
@@ -359,8 +359,8 @@
       
 
       
-        <h1 id="Object-CUI根视图控制器和tag值"><a href="#Object-CUI根视图控制器和tag值" class="headerlink" title="Object-CUI根视图控制器和tag值"></a>Object-C<em>UI</em>根视图控制器和tag值</h1><h4 id="1、初始创建根试图控制器"><a href="#1、初始创建根试图控制器" class="headerlink" title="1、初始创建根试图控制器"></a>1、初始创建根试图控制器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];</div><div class="line">[self.window setBackgroundColor:[UIColor whiteColor]];</div><div class="line">[self.window makeKeyAndVisible];</div><div class="line">[self.window setRootViewController:[RootViewController new]];</div></pre></td></tr></table></figure>
-<h4 id="2、添加并调用tag值"><a href="#2、添加并调用tag值" class="headerlink" title="2、添加并调用tag值"></a>2、添加并调用tag值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 添加：</div><div class="line">[secondView setTag:1111];</div><div class="line">// 调用</div><div class="line">[self.window viewWithTag:1111];</div></pre></td></tr></table></figure>
+        <h1 id="Object-CUI根视图控制器和tag值"><a href="#Object-CUI根视图控制器和tag值" class="headerlink" title="Object-CUI根视图控制器和tag值"></a>Object-C<em>UI</em>根视图控制器和tag值</h1><h4 id="1、初始创建根试图控制器"><a href="#1、初始创建根试图控制器" class="headerlink" title="1、初始创建根试图控制器"></a>1、初始创建根试图控制器</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.window = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[<span class="built_in">UIScreen</span> mainScreen].bounds];</div><div class="line">[<span class="keyword">self</span>.window setBackgroundColor:[<span class="built_in">UIColor</span> whiteColor]];</div><div class="line">[<span class="keyword">self</span>.window makeKeyAndVisible];</div><div class="line">[<span class="keyword">self</span>.window setRootViewController:[RootViewController new]];</div></pre></td></tr></table></figure>
+<h4 id="2、添加并调用tag值"><a href="#2、添加并调用tag值" class="headerlink" title="2、添加并调用tag值"></a>2、添加并调用tag值</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 添加：</span></div><div class="line">[secondView setTag:<span class="number">1111</span>];</div><div class="line"><span class="comment">// 调用</span></div><div class="line">[<span class="keyword">self</span>.window viewWithTag:<span class="number">1111</span>];</div></pre></td></tr></table></figure>
 
       
     </div>
