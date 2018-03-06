@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="根视图控制器和tag值1、初始创建根试图控制器1234self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];[self.window setBackgroundColor:[UIColor whiteColor]];[self.window makeKeyAndVisible];[self.windo">
+<meta name="description" content="UIView1、创建12UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];[self.view addSubview:view]; 2、属性1234view.backgroundColor = [UIColor redColor];view.center = self.view.center;view.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Object-C_UI_根视图控制器和tag值">
-<meta property="og:url" content="http://yoursite.com/2018/02/26/Object-C_UI_根视图控制器和tag值/index.html">
+<meta property="og:title" content="Object-C_UI_UIView">
+<meta property="og:url" content="http://yoursite.com/2018/03/06/Object-C_UI_UIView/index.html">
 <meta property="og:site_name" content="闪亮∮天使">
-<meta property="og:description" content="根视图控制器和tag值1、初始创建根试图控制器1234self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];[self.window setBackgroundColor:[UIColor whiteColor]];[self.window makeKeyAndVisible];[self.windo">
-<meta property="og:updated_time" content="2018-03-06T02:45:54.000Z">
+<meta property="og:description" content="UIView1、创建12UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];[self.view addSubview:view]; 2、属性1234view.backgroundColor = [UIColor redColor];view.center = self.view.center;view.">
+<meta property="og:updated_time" content="2018-03-06T03:08:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Object-C_UI_根视图控制器和tag值">
-<meta name="twitter:description" content="根视图控制器和tag值1、初始创建根试图控制器1234self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];[self.window setBackgroundColor:[UIColor whiteColor]];[self.window makeKeyAndVisible];[self.windo">
+<meta name="twitter:title" content="Object-C_UI_UIView">
+<meta name="twitter:description" content="UIView1、创建12UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];[self.view addSubview:view]; 2、属性1234view.backgroundColor = [UIColor redColor];view.center = self.view.center;view.">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/26/Object-C_UI_根视图控制器和tag值/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/06/Object-C_UI_UIView/"/>
 
 
 
 
 
-  <title>Object-C_UI_根视图控制器和tag值 | 闪亮∮天使</title>
+  <title>Object-C_UI_UIView | 闪亮∮天使</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/Object-C_UI_根视图控制器和tag值/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/Object-C_UI_UIView/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="闪亮ing">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Object-C_UI_根视图控制器和tag值</h1>
+          <h1 class="post-title" itemprop="name headline">Object-C_UI_UIView</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T17:38:25+08:00">
-                2018-02-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T11:07:10+08:00">
+                2018-03-06
               </time>
             
 
@@ -359,13 +359,11 @@
       
 
       
-        <h1 id="根视图控制器和tag值"><a href="#根视图控制器和tag值" class="headerlink" title="根视图控制器和tag值"></a>根视图控制器和tag值</h1><h4 id="1、初始创建根试图控制器"><a href="#1、初始创建根试图控制器" class="headerlink" title="1、初始创建根试图控制器"></a>1、初始创建根试图控制器</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.window = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[<span class="built_in">UIScreen</span> mainScreen].bounds];</div><div class="line">[<span class="keyword">self</span>.window setBackgroundColor:[<span class="built_in">UIColor</span> whiteColor]];</div><div class="line">[<span class="keyword">self</span>.window makeKeyAndVisible];</div><div class="line">[<span class="keyword">self</span>.window setRootViewController:[RootViewController new]];</div></pre></td></tr></table></figure>
-<h4 id="2、添加并调用tag值"><a href="#2、添加并调用tag值" class="headerlink" title="2、添加并调用tag值"></a>2、添加并调用tag值</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 添加：</span></div><div class="line">[secondView setTag:<span class="number">1111</span>];</div><div class="line"><span class="comment">// 调用</span></div><div class="line">[<span class="keyword">self</span>.window viewWithTag:<span class="number">1111</span>];</div></pre></td></tr></table></figure>
-<h4 id="3、UIWindow关于Level"><a href="#3、UIWindow关于Level" class="headerlink" title="3、UIWindow关于Level"></a>3、UIWindow关于Level</h4><blockquote>
-<p>  UIKIT_EXTERN const UIWindowLevel UIWindowLevelNormal;<br>    UIKIT_EXTERN const UIWindowLevel UIWindowLevelAlert;<br>    UIKIT_EXTERN const UIWindowLevel UIWindowLevelStatusBar</p>
-</blockquote>
-<p><em>上面三个值分别是0.0,2000.0,1000.0</em><br><strong>大部分在App上使用的都是UIWindowLevelNormal，这也是每个Window被创建出来时的默认值</strong></p>
-<h4 id="4、获取keyWindow"><a href="#4、获取keyWindow" class="headerlink" title="4、获取keyWindow"></a>4、获取keyWindow</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIWindow</span> *keyWindow = [[<span class="built_in">UIApplication</span> sharedApplication] keyWindow];</div></pre></td></tr></table></figure>
+        <h1 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h1><h4 id="1、创建"><a href="#1、创建" class="headerlink" title="1、创建"></a>1、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>)];</div><div class="line">[<span class="keyword">self</span>.view addSubview:view];</div></pre></td></tr></table></figure>
+<h4 id="2、属性"><a href="#2、属性" class="headerlink" title="2、属性"></a>2、属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">view.backgroundColor = [<span class="built_in">UIColor</span> redColor];</div><div class="line">view.center = <span class="keyword">self</span>.view.center;</div><div class="line">view.tag = <span class="number">101</span>;</div></pre></td></tr></table></figure>
+<h4 id="3、继承"><a href="#3、继承" class="headerlink" title="3、继承"></a>3、继承</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) <span class="class"><span class="keyword">@interface</span> <span class="title">UIView</span> : <span class="title">UIResponder</span> &lt;<span class="title">NSCoding</span>, <span class="title">UIAppearance</span>, <span class="title">UIAppearanceContainer</span>, <span class="title">UIDynamicItem</span>, <span class="title">UITraitEnvironment</span>, <span class="title">UICoordinateSpace</span>, <span class="title">UIFocusItem</span>, <span class="title">CALayerDelegate</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>父类暴露的方法和属性都可以使用</strong></p>
+<h4 id="4、坐标转换"><a href="#4、坐标转换" class="headerlink" title="4、坐标转换"></a>4、坐标转换</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point toView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view;  <span class="comment">// 转换到其他视图上（点）</span></div><div class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point fromView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view;  <span class="comment">// 从其他视图上转过来（点）</span></div><div class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect toView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view; <span class="comment">// 转换到其他视图上（范围）</span></div><div class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect fromView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view; <span class="comment">// 从其他视图上转过来（范围）</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -402,8 +400,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/12/Hexo 博客简易搭建/" rel="next" title="Hexo 博客简易搭建">
-                <i class="fa fa-chevron-left"></i> Hexo 博客简易搭建
+              <a href="/2018/02/26/Object-C_UI_根视图控制器和tag值/" rel="next" title="Object-C_UI_根视图控制器和tag值">
+                <i class="fa fa-chevron-left"></i> Object-C_UI_根视图控制器和tag值
               </a>
             
           </div>
@@ -411,10 +409,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/06/Object-C_UI_UIView/" rel="prev" title="Object-C_UI_UIView">
-                Object-C_UI_UIView <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -563,7 +557,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#根视图控制器和tag值"><span class="nav-number">1.</span> <span class="nav-text">根视图控制器和tag值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、初始创建根试图控制器"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1、初始创建根试图控制器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、添加并调用tag值"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2、添加并调用tag值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、UIWindow关于Level"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3、UIWindow关于Level</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、获取keyWindow"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">4、获取keyWindow</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UIView"><span class="nav-number">1.</span> <span class="nav-text">UIView</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、创建"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1、创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、属性"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2、属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、继承"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3、继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、坐标转换"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">4、坐标转换</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
