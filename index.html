@@ -363,6 +363,12 @@
           
             <h1 id="根视图控制器和tag值"><a href="#根视图控制器和tag值" class="headerlink" title="根视图控制器和tag值"></a>根视图控制器和tag值</h1><h4 id="1、初始创建根试图控制器"><a href="#1、初始创建根试图控制器" class="headerlink" title="1、初始创建根试图控制器"></a>1、初始创建根试图控制器</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.window = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[<span class="built_in">UIScreen</span> mainScreen].bounds];</div><div class="line">[<span class="keyword">self</span>.window setBackgroundColor:[<span class="built_in">UIColor</span> whiteColor]];</div><div class="line">[<span class="keyword">self</span>.window makeKeyAndVisible];</div><div class="line">[<span class="keyword">self</span>.window setRootViewController:[RootViewController new]];</div></pre></td></tr></table></figure>
 <h4 id="2、添加并调用tag值"><a href="#2、添加并调用tag值" class="headerlink" title="2、添加并调用tag值"></a>2、添加并调用tag值</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 添加：</span></div><div class="line">[secondView setTag:<span class="number">1111</span>];</div><div class="line"><span class="comment">// 调用</span></div><div class="line">[<span class="keyword">self</span>.window viewWithTag:<span class="number">1111</span>];</div></pre></td></tr></table></figure>
+<p>####3、UIWindow关于Level</p>
+<blockquote>
+<p>  UIKIT_EXTERN const UIWindowLevel UIWindowLevelNormal;<br>    UIKIT_EXTERN const UIWindowLevel UIWindowLevelAlert;<br>    UIKIT_EXTERN const UIWindowLevel UIWindowLevelStatusBar</p>
+</blockquote>
+<p><em>上面三个值分别是0.0,2000.0,1000.0</em><br><strong>大部分在App上使用的都是UIWindowLevelNormal，这也是每个Window被创建出来时的默认值</strong></p>
+<p>####4、获取keyWindow<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIWindow</span> *keyWindow = [[<span class="built_in">UIApplication</span> sharedApplication] keyWindow];</div></pre></td></tr></table></figure></p>
 
           
         
