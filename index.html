@@ -260,154 +260,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/Object-C_UI_UIView/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="闪亮ing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/myAvatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="闪亮∮天使">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/26/Object-C_UI_UIView/" itemprop="url">Object-C_UI_UIView</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T17:38:25+08:00">
-                2018-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Object-C/" itemprop="url" rel="index">
-                    <span itemprop="name">Object-C</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Object-C/UI/" itemprop="url" rel="index">
-                    <span itemprop="name">UI</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h1><h4 id="1、创建"><a href="#1、创建" class="headerlink" title="1、创建"></a>1、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>)];</div><div class="line">[<span class="keyword">self</span>.view addSubview:view];</div></pre></td></tr></table></figure>
-<h4 id="2、属性"><a href="#2、属性" class="headerlink" title="2、属性"></a>2、属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">view.backgroundColor = [<span class="built_in">UIColor</span> redColor];</div><div class="line">view.center = <span class="keyword">self</span>.view.center;</div></pre></td></tr></table></figure>
-<h4 id="3、继承"><a href="#3、继承" class="headerlink" title="3、继承"></a>3、继承</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) <span class="class"><span class="keyword">@interface</span> <span class="title">UIView</span> : <span class="title">UIResponder</span> &lt;<span class="title">NSCoding</span>, <span class="title">UIAppearance</span>, <span class="title">UIAppearanceContainer</span>, <span class="title">UIDynamicItem</span>, <span class="title">UITraitEnvironment</span>, <span class="title">UICoordinateSpace</span>, <span class="title">UIFocusItem</span>, <span class="title">CALayerDelegate</span>&gt;</span></div></pre></td></tr></table></figure>
-<h4 id="4、坐标转换"><a href="#4、坐标转换" class="headerlink" title="4、坐标转换"></a>4、坐标转换</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point toView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view;  <span class="comment">// 转换到其他视图上（点）</span></div><div class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point fromView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view;  <span class="comment">// 从其他视图上转过来（点）</span></div><div class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect toView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view; <span class="comment">// 转换到其他视图上（范围）</span></div><div class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect fromView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view; <span class="comment">// 从其他视图上转过来（范围）</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/Object-C_UI_根视图控制器和tag值/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -516,6 +368,155 @@
 </blockquote>
 <p><em>上面三个值分别是0.0,2000.0,1000.0</em><br><strong>大部分在App上使用的都是UIWindowLevelNormal，这也是每个Window被创建出来时的默认值</strong></p>
 <h4 id="4、获取keyWindow"><a href="#4、获取keyWindow" class="headerlink" title="4、获取keyWindow"></a>4、获取keyWindow</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIWindow</span> *keyWindow = [[<span class="built_in">UIApplication</span> sharedApplication] keyWindow];</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/Object-C_UI_UIView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="闪亮ing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myAvatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闪亮∮天使">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/26/Object-C_UI_UIView/" itemprop="url">Object-C_UI_UIView</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T17:38:25+08:00">
+                2018-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/" itemprop="url" rel="index">
+                    <span itemprop="name">Object-C</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/UI/" itemprop="url" rel="index">
+                    <span itemprop="name">UI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h1><h4 id="1、创建"><a href="#1、创建" class="headerlink" title="1、创建"></a>1、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>)];</div><div class="line">[<span class="keyword">self</span>.view addSubview:view];</div></pre></td></tr></table></figure>
+<h4 id="2、属性"><a href="#2、属性" class="headerlink" title="2、属性"></a>2、属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">view.backgroundColor = [<span class="built_in">UIColor</span> redColor];</div><div class="line">view.center = <span class="keyword">self</span>.view.center;</div><div class="line">view.tag = <span class="number">101</span>;</div></pre></td></tr></table></figure>
+<h4 id="3、继承"><a href="#3、继承" class="headerlink" title="3、继承"></a>3、继承</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) <span class="class"><span class="keyword">@interface</span> <span class="title">UIView</span> : <span class="title">UIResponder</span> &lt;<span class="title">NSCoding</span>, <span class="title">UIAppearance</span>, <span class="title">UIAppearanceContainer</span>, <span class="title">UIDynamicItem</span>, <span class="title">UITraitEnvironment</span>, <span class="title">UICoordinateSpace</span>, <span class="title">UIFocusItem</span>, <span class="title">CALayerDelegate</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>父类暴露的方法和属性都可以使用</strong></p>
+<h4 id="4、坐标转换"><a href="#4、坐标转换" class="headerlink" title="4、坐标转换"></a>4、坐标转换</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point toView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view;  <span class="comment">// 转换到其他视图上（点）</span></div><div class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point fromView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view;  <span class="comment">// 从其他视图上转过来（点）</span></div><div class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect toView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view; <span class="comment">// 转换到其他视图上（范围）</span></div><div class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect fromView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view; <span class="comment">// 从其他视图上转过来（范围）</span></div></pre></td></tr></table></figure>
 
           
         
