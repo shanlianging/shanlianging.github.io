@@ -260,6 +260,155 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/Object-C_UI_UILabel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="闪亮ing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myAvatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闪亮∮天使">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/06/Object-C_UI_UILabel/" itemprop="url">Object-C_UI_UILabel</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T11:54:14+08:00">
+                2018-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/" itemprop="url" rel="index">
+                    <span itemprop="name">Object-C</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/UI/" itemprop="url" rel="index">
+                    <span itemprop="name">UI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="UILabel"><a href="#UILabel" class="headerlink" title="UILabel"></a>UILabel</h1><h4 id="1、继承"><a href="#1、继承" class="headerlink" title="1、继承"></a>1、继承</h4><p><strong>父类暴露的方法和属性都可以使用</strong><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) <span class="class"><span class="keyword">@interface</span> <span class="title">UILabel</span> : <span class="title">UIView</span> &lt;<span class="title">NSCoding</span>, <span class="title">UIContentSizeCategoryAdjusting</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h4 id="2、常用属性"><a href="#2、常用属性" class="headerlink" title="2、常用属性"></a>2、常用属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sl_label.text = <span class="string">@"文字"</span>;    <span class="comment">// 设置文字</span></div><div class="line">sl_label.textColor = [<span class="built_in">UIColor</span> redColor];    <span class="comment">// 设置字体颜色</span></div><div class="line"><span class="comment">// 设置字体大小（系统默认17.0），单位和开发尺寸一致</span></div><div class="line">sl_label.font = [<span class="built_in">UIFont</span> systemFontOfSize:<span class="number">30.0</span>]; <span class="comment">// 正常</span></div><div class="line">sl_label.font = [<span class="built_in">UIFont</span> boldSystemFontOfSize:<span class="number">30.0</span>]; <span class="comment">// 加粗</span></div><div class="line"><span class="comment">// 设置字体位置</span></div><div class="line">sl_label.textAlignment = <span class="built_in">NSTextAlignmentCenter</span>;    <span class="comment">// 居中</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* Values for NSTextAlignment */</span></div><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, <span class="built_in">NSTextAlignment</span>) &#123;</div><div class="line"><span class="built_in">NSTextAlignmentLeft</span>      = <span class="number">0</span>,    <span class="comment">// Visually left aligned</span></div><div class="line"><span class="meta">#if TARGET_OS_IPHONE</span></div><div class="line"><span class="built_in">NSTextAlignmentCenter</span>    = <span class="number">1</span>,    <span class="comment">// Visually centered</span></div><div class="line"><span class="built_in">NSTextAlignmentRight</span>     = <span class="number">2</span>,    <span class="comment">// Visually right aligned</span></div><div class="line"><span class="meta">#else /* !TARGET_OS_IPHONE */</span></div><div class="line"><span class="built_in">NSTextAlignmentRight</span>     = <span class="number">1</span>,    <span class="comment">// Visually right aligned</span></div><div class="line"><span class="built_in">NSTextAlignmentCenter</span>    = <span class="number">2</span>,    <span class="comment">// Visually centered</span></div><div class="line"><span class="meta">#endif</span></div><div class="line"><span class="built_in">NSTextAlignmentJustified</span> = <span class="number">3</span>,    <span class="comment">// Fully-justified. The last line in a paragraph is natural-aligned.</span></div><div class="line"><span class="built_in">NSTextAlignmentNatural</span>   = <span class="number">4</span>,    <span class="comment">// Indicates the default alignment for script</span></div><div class="line">&#125; <span class="built_in">NS_ENUM_AVAILABLE_IOS</span>(<span class="number">6</span>_0);</div></pre></td></tr></table></figure>
+<h4 id="3、设置文字行的自适应，自动换行"><a href="#3、设置文字行的自适应，自动换行" class="headerlink" title="3、设置文字行的自适应，自动换行"></a>3、设置文字行的自适应，自动换行</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1、设置行数</span></div><div class="line">sl_label.numberOfLines = <span class="number">0</span>;</div><div class="line"><span class="comment">// 2、文字结尾状态</span></div><div class="line">sl_label.lineBreakMode = <span class="built_in">NSLineBreakByCharWrapping</span>;</div></pre></td></tr></table></figure>
+<h4 id="4、-其他属性"><a href="#4、-其他属性" class="headerlink" title="4、 其他属性"></a>4、 其他属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 设置文字的格式：缩进、行间距等</span></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>)   <span class="built_in">NSAttributedString</span> *attributedText <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">6</span>_0);  <span class="comment">// default is nil</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/Object-C_UI_UIButton/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -515,11 +664,12 @@
       
         
           
-            <h1 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h1><h4 id="1、创建"><a href="#1、创建" class="headerlink" title="1、创建"></a>1、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>)];</div><div class="line">[<span class="keyword">self</span>.view addSubview:view];</div></pre></td></tr></table></figure>
-<h4 id="2、属性"><a href="#2、属性" class="headerlink" title="2、属性"></a>2、属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">view.backgroundColor = [<span class="built_in">UIColor</span> redColor];</div><div class="line">view.center = <span class="keyword">self</span>.view.center;</div><div class="line">view.tag = <span class="number">101</span>;</div></pre></td></tr></table></figure>
+            <h1 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h1><h4 id="1、创建"><a href="#1、创建" class="headerlink" title="1、创建"></a>1、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIView</span> *sl_view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>)];</div><div class="line">[<span class="keyword">self</span>.view addSubview:sl_view];</div></pre></td></tr></table></figure>
+<h4 id="2、属性"><a href="#2、属性" class="headerlink" title="2、属性"></a>2、属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">sl_view.backgroundColor = [<span class="built_in">UIColor</span> redColor];</div><div class="line">sl_view.center = <span class="keyword">self</span>.view.center;</div><div class="line">sl_view.tag = <span class="number">101</span>;</div><div class="line">sl_view.clipsToBounds = <span class="literal">YES</span>;    <span class="comment">// 子类多余被切掉</span></div></pre></td></tr></table></figure>
 <h4 id="3、继承"><a href="#3、继承" class="headerlink" title="3、继承"></a>3、继承</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) <span class="class"><span class="keyword">@interface</span> <span class="title">UIView</span> : <span class="title">UIResponder</span> &lt;<span class="title">NSCoding</span>, <span class="title">UIAppearance</span>, <span class="title">UIAppearanceContainer</span>, <span class="title">UIDynamicItem</span>, <span class="title">UITraitEnvironment</span>, <span class="title">UICoordinateSpace</span>, <span class="title">UIFocusItem</span>, <span class="title">CALayerDelegate</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>父类暴露的方法和属性都可以使用</strong></p>
 <h4 id="4、坐标转换"><a href="#4、坐标转换" class="headerlink" title="4、坐标转换"></a>4、坐标转换</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point toView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view;  <span class="comment">// 转换到其他视图上（点）</span></div><div class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point fromView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view;  <span class="comment">// 从其他视图上转过来（点）</span></div><div class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect toView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view; <span class="comment">// 转换到其他视图上（范围）</span></div><div class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect fromView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view; <span class="comment">// 从其他视图上转过来（范围）</span></div></pre></td></tr></table></figure>
+<h4 id="3、设置阴影"><a href="#3、设置阴影" class="headerlink" title="3、设置阴影"></a>3、设置阴影</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 设置阴影颜色</span></div><div class="line">sl_view.layer.shadowColor = RGB_HEX(<span class="number">0xe0e7ee</span>).CGColor;</div><div class="line">sl_view.layer.shadowOpacity = <span class="number">1</span>;</div><div class="line">sl_view.layer.shadowOffset = <span class="built_in">CGSizeMake</span>(<span class="number">1</span>, <span class="number">4</span>);</div></pre></td></tr></table></figure>
+<h4 id="4、设置圆角"><a href="#4、设置圆角" class="headerlink" title="4、设置圆角"></a>4、设置圆角</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sl_view.layer.cornerRadius = <span class="number">10</span>;    <span class="comment">// 圆角数</span></div><div class="line">sl_view.layer.masksToBounds = <span class="literal">YES</span>;  <span class="comment">// 多余切掉</span></div></pre></td></tr></table></figure>
 
           
         
@@ -1041,7 +1191,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

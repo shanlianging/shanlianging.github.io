@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="UIView1、创建12UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];[self.view addSubview:view]; 2、属性1234view.backgroundColor = [UIColor redColor];view.center = self.view.center;view.">
+<meta name="description" content="UIView1、创建12UIView *sl_view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];[self.view addSubview:sl_view]; 2、属性12345sl_view.backgroundColor = [UIColor redColor];sl_view.center = self.view">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Object-C_UI_UIView">
 <meta property="og:url" content="http://yoursite.com/2018/03/06/Object-C_UI_UIView/index.html">
 <meta property="og:site_name" content="闪亮∮天使">
-<meta property="og:description" content="UIView1、创建12UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];[self.view addSubview:view]; 2、属性1234view.backgroundColor = [UIColor redColor];view.center = self.view.center;view.">
-<meta property="og:updated_time" content="2018-03-06T03:08:06.000Z">
+<meta property="og:description" content="UIView1、创建12UIView *sl_view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];[self.view addSubview:sl_view]; 2、属性12345sl_view.backgroundColor = [UIColor redColor];sl_view.center = self.view">
+<meta property="og:updated_time" content="2018-03-06T03:53:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Object-C_UI_UIView">
-<meta name="twitter:description" content="UIView1、创建12UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];[self.view addSubview:view]; 2、属性1234view.backgroundColor = [UIColor redColor];view.center = self.view.center;view.">
+<meta name="twitter:description" content="UIView1、创建12UIView *sl_view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];[self.view addSubview:sl_view]; 2、属性12345sl_view.backgroundColor = [UIColor redColor];sl_view.center = self.view">
 
 
 
@@ -359,11 +359,12 @@
       
 
       
-        <h1 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h1><h4 id="1、创建"><a href="#1、创建" class="headerlink" title="1、创建"></a>1、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIView</span> *view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>)];</div><div class="line">[<span class="keyword">self</span>.view addSubview:view];</div></pre></td></tr></table></figure>
-<h4 id="2、属性"><a href="#2、属性" class="headerlink" title="2、属性"></a>2、属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">view.backgroundColor = [<span class="built_in">UIColor</span> redColor];</div><div class="line">view.center = <span class="keyword">self</span>.view.center;</div><div class="line">view.tag = <span class="number">101</span>;</div></pre></td></tr></table></figure>
+        <h1 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h1><h4 id="1、创建"><a href="#1、创建" class="headerlink" title="1、创建"></a>1、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIView</span> *sl_view = [[<span class="built_in">UIView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>)];</div><div class="line">[<span class="keyword">self</span>.view addSubview:sl_view];</div></pre></td></tr></table></figure>
+<h4 id="2、属性"><a href="#2、属性" class="headerlink" title="2、属性"></a>2、属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">sl_view.backgroundColor = [<span class="built_in">UIColor</span> redColor];</div><div class="line">sl_view.center = <span class="keyword">self</span>.view.center;</div><div class="line">sl_view.tag = <span class="number">101</span>;</div><div class="line">sl_view.clipsToBounds = <span class="literal">YES</span>;    <span class="comment">// 子类多余被切掉</span></div></pre></td></tr></table></figure>
 <h4 id="3、继承"><a href="#3、继承" class="headerlink" title="3、继承"></a>3、继承</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) <span class="class"><span class="keyword">@interface</span> <span class="title">UIView</span> : <span class="title">UIResponder</span> &lt;<span class="title">NSCoding</span>, <span class="title">UIAppearance</span>, <span class="title">UIAppearanceContainer</span>, <span class="title">UIDynamicItem</span>, <span class="title">UITraitEnvironment</span>, <span class="title">UICoordinateSpace</span>, <span class="title">UIFocusItem</span>, <span class="title">CALayerDelegate</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><strong>父类暴露的方法和属性都可以使用</strong></p>
 <h4 id="4、坐标转换"><a href="#4、坐标转换" class="headerlink" title="4、坐标转换"></a>4、坐标转换</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point toView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view;  <span class="comment">// 转换到其他视图上（点）</span></div><div class="line">- (<span class="built_in">CGPoint</span>)convertPoint:(<span class="built_in">CGPoint</span>)point fromView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view;  <span class="comment">// 从其他视图上转过来（点）</span></div><div class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect toView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view; <span class="comment">// 转换到其他视图上（范围）</span></div><div class="line">- (<span class="built_in">CGRect</span>)convertRect:(<span class="built_in">CGRect</span>)rect fromView:(<span class="keyword">nullable</span> <span class="built_in">UIView</span> *)view; <span class="comment">// 从其他视图上转过来（范围）</span></div></pre></td></tr></table></figure>
+<h4 id="3、设置阴影"><a href="#3、设置阴影" class="headerlink" title="3、设置阴影"></a>3、设置阴影</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 设置阴影颜色</span></div><div class="line">sl_view.layer.shadowColor = RGB_HEX(<span class="number">0xe0e7ee</span>).CGColor;</div><div class="line">sl_view.layer.shadowOpacity = <span class="number">1</span>;</div><div class="line">sl_view.layer.shadowOffset = <span class="built_in">CGSizeMake</span>(<span class="number">1</span>, <span class="number">4</span>);</div></pre></td></tr></table></figure>
+<h4 id="4、设置圆角"><a href="#4、设置圆角" class="headerlink" title="4、设置圆角"></a>4、设置圆角</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sl_view.layer.cornerRadius = <span class="number">10</span>;    <span class="comment">// 圆角数</span></div><div class="line">sl_view.layer.masksToBounds = <span class="literal">YES</span>;  <span class="comment">// 多余切掉</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -484,7 +485,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -561,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UIView"><span class="nav-number">1.</span> <span class="nav-text">UIView</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、创建"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1、创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、属性"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2、属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、继承"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3、继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、坐标转换"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">4、坐标转换</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UIView"><span class="nav-number">1.</span> <span class="nav-text">UIView</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、创建"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1、创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、属性"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2、属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、继承"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3、继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、坐标转换"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">4、坐标转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、设置阴影"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">3、设置阴影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、设置圆角"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">4、设置圆角</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
