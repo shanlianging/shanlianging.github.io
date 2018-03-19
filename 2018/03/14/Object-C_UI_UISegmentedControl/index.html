@@ -1,0 +1,749 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="UISegmentedControl1、继承父类暴露的方法和属性都可以使用 1NS_CLASS_AVAILABLE_IOS(2_0) @interface UISegmentedControl : UIControl &amp;lt;NSCoding&amp;gt; 2、创建1234NSArray *sl_array = @[@&quot;第一页&quot;,@&quot;第二页&quot;,@&quot;第三页&quot;,@&quot;第四页&quot;];UISegmentedCont">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Object-C_UI_UISegmentedControl">
+<meta property="og:url" content="http://yoursite.com/2018/03/14/Object-C_UI_UISegmentedControl/index.html">
+<meta property="og:site_name" content="闪亮∮天使">
+<meta property="og:description" content="UISegmentedControl1、继承父类暴露的方法和属性都可以使用 1NS_CLASS_AVAILABLE_IOS(2_0) @interface UISegmentedControl : UIControl &amp;lt;NSCoding&amp;gt; 2、创建1234NSArray *sl_array = @[@&quot;第一页&quot;,@&quot;第二页&quot;,@&quot;第三页&quot;,@&quot;第四页&quot;];UISegmentedCont">
+<meta property="og:updated_time" content="2018-03-19T02:04:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Object-C_UI_UISegmentedControl">
+<meta name="twitter:description" content="UISegmentedControl1、继承父类暴露的方法和属性都可以使用 1NS_CLASS_AVAILABLE_IOS(2_0) @interface UISegmentedControl : UIControl &amp;lt;NSCoding&amp;gt; 2、创建1234NSArray *sl_array = @[@&quot;第一页&quot;,@&quot;第二页&quot;,@&quot;第三页&quot;,@&quot;第四页&quot;];UISegmentedCont">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/14/Object-C_UI_UISegmentedControl/"/>
+
+
+
+
+
+  <title>Object-C_UI_UISegmentedControl | 闪亮∮天使</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">闪亮∮天使</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">走遍大江南北</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/Object-C_UI_UISegmentedControl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="闪亮ing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myAvatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闪亮∮天使">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Object-C_UI_UISegmentedControl</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T20:28:19+08:00">
+                2018-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/" itemprop="url" rel="index">
+                    <span itemprop="name">Object-C</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/UI/" itemprop="url" rel="index">
+                    <span itemprop="name">UI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="UISegmentedControl"><a href="#UISegmentedControl" class="headerlink" title="UISegmentedControl"></a>UISegmentedControl</h1><h4 id="1、继承"><a href="#1、继承" class="headerlink" title="1、继承"></a>1、继承</h4><p><strong>父类暴露的方法和属性都可以使用</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) <span class="class"><span class="keyword">@interface</span> <span class="title">UISegmentedControl</span> : <span class="title">UIControl</span> &lt;<span class="title">NSCoding</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="2、创建"><a href="#2、创建" class="headerlink" title="2、创建"></a>2、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *sl_array = @[<span class="string">@"第一页"</span>,<span class="string">@"第二页"</span>,<span class="string">@"第三页"</span>,<span class="string">@"第四页"</span>];</div><div class="line"><span class="built_in">UISegmentedControl</span> *sl_segmentedControl = [[<span class="built_in">UISegmentedControl</span> alloc] initWithItems:sl_array];</div><div class="line">sl_segmentedControl.center = <span class="keyword">self</span>.view.center;</div><div class="line">[<span class="keyword">self</span>.view addSubview:sl_segmentedControl];</div></pre></td></tr></table></figure>
+<h4 id="3、常用属性"><a href="#3、常用属性" class="headerlink" title="3、常用属性"></a>3、常用属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">sl_segmentedControl.backgroundColor = [<span class="built_in">UIColor</span> grayColor];  <span class="comment">// 设置背景色（小瑕疵：自己受到设置圆角的影响）</span></div><div class="line">sl_segmentedControl.tintColor = [<span class="built_in">UIColor</span> redColor]; <span class="comment">// 着色（边框、文字、选中后的颜色）</span></div><div class="line"></div><div class="line"><span class="comment">// 修改内容</span></div><div class="line">sl_segmentedControl.selectedSegmentIndex = <span class="number">0</span>;   <span class="comment">//设置选中标题</span></div><div class="line">[sl_segmentedControl setTitle:<span class="string">@"未完待续"</span> forSegmentAtIndex:<span class="number">3</span>]; <span class="comment">// 修改某一个标题</span></div><div class="line"><span class="built_in">NSString</span> *string = [sl_segmentedControl titleForSegmentAtIndex:<span class="number">3</span>];  <span class="comment">// 获取某一个下标的内容</span></div><div class="line"></div><div class="line">[sl_segmentedControl insertSegmentWithTitle:<span class="string">@"插入分段"</span> atIndex:<span class="number">3</span> animated:<span class="literal">YES</span>];  <span class="comment">//  插入分段</span></div><div class="line"></div><div class="line">[sl_segmentedControl removeSegmentAtIndex:<span class="number">2</span> animated:<span class="literal">YES</span>];  <span class="comment">// 移除分段</span></div><div class="line"></div><div class="line">sl_segmentedControl.apportionsSegmentWidthsByContent = <span class="literal">YES</span>; <span class="comment">// 自动为内容分配所占区域的大小</span></div></pre></td></tr></table></figure>
+<h4 id="4、为分段控制器添加方法"><a href="#4、为分段控制器添加方法" class="headerlink" title="4、为分段控制器添加方法"></a>4、为分段控制器添加方法</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1、添加方法</span></div><div class="line">[sl_segmentedControl addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(sl_changePage:) forControlEvents:<span class="built_in">UIControlEventValueChanged</span>];</div><div class="line"><span class="comment">// 2、方法</span></div><div class="line">- (<span class="keyword">void</span>)sl_changePage:(<span class="built_in">UISegmentedControl</span> *)seg &#123;</div><div class="line"><span class="comment">// 如果选择第二个分段</span></div><div class="line"><span class="keyword">if</span> (seg.selectedSegmentIndex == <span class="number">1</span>) &#123;</div><div class="line"><span class="comment">// 移除第一个页面</span></div><div class="line">[<span class="keyword">self</span>.firstView removeFromSuperview];</div><div class="line"><span class="comment">// 插入第二个页面（下标为0，防止覆盖分段控制器）</span></div><div class="line">[<span class="keyword">self</span>.view insertSubview:<span class="keyword">self</span>.secondView atIndex:<span class="number">0</span>];</div><div class="line">&#125;<span class="keyword">else</span> &#123;</div><div class="line"><span class="comment">// 移除第二个页面</span></div><div class="line">[<span class="keyword">self</span>.secondView removeFromSuperview];</div><div class="line">[<span class="keyword">self</span>.view insertSubview:<span class="keyword">self</span>.firstView atIndex:<span class="number">0</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="5、其他属性或方法"><a href="#5、其他属性或方法" class="headerlink" title="5、其他属性或方法"></a>5、其他属性或方法</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setTitle:(<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)title forSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;      <span class="comment">// can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil</span></div><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)titleForSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setImage:(<span class="keyword">nullable</span> <span class="built_in">UIImage</span> *)image forSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;       <span class="comment">// can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil</span></div><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">UIImage</span> *)imageForSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setWidth:(<span class="built_in">CGFloat</span>)width forSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;         <span class="comment">// set to 0.0 width to autosize. default is 0.0</span></div><div class="line">- (<span class="built_in">CGFloat</span>)widthForSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setContentOffset:(<span class="built_in">CGSize</span>)offset forSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment; <span class="comment">// adjust offset of image or text inside the segment. default is (0,0)</span></div><div class="line">- (<span class="built_in">CGSize</span>)contentOffsetForSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setEnabled:(<span class="built_in">BOOL</span>)enabled forSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;        <span class="comment">// default is YES</span></div><div class="line">- (<span class="built_in">BOOL</span>)isEnabledForSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;</div><div class="line"></div><div class="line"><span class="comment">/* For adjusting the position of a title or image within the given segment of a segmented control.</span></div><div class="line">*/</div><div class="line">- (<span class="keyword">void</span>)setContentPositionAdjustment:(<span class="built_in">UIOffset</span>)adjustment forSegmentType:(<span class="built_in">UISegmentedControlSegment</span>)leftCenterRightOrAlone barMetrics:(<span class="built_in">UIBarMetrics</span>)barMetrics <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">5</span>_0) <span class="built_in">UI_APPEARANCE_SELECTOR</span>;</div><div class="line">- (<span class="built_in">UIOffset</span>)contentPositionAdjustmentForSegmentType:(<span class="built_in">UISegmentedControlSegment</span>)leftCenterRightOrAlone barMetrics:(<span class="built_in">UIBarMetrics</span>)barMetrics <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">5</span>_0) <span class="built_in">UI_APPEARANCE_SELECTOR</span>;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/14/Object-C_UI_UIPageControl/" rel="next" title="Object-C_UI_UIPageControl">
+                <i class="fa fa-chevron-left"></i> Object-C_UI_UIPageControl
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/myAvatar.jpeg"
+               alt="闪亮ing" />
+          <p class="site-author-name" itemprop="name">闪亮ing</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shanlianging" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5915857504/" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/shan-liang-ing" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-meh-o"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UISegmentedControl"><span class="nav-number">1.</span> <span class="nav-text">UISegmentedControl</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、继承"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1、继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、创建"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2、创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、常用属性"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3、常用属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、为分段控制器添加方法"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">4、为分段控制器添加方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、其他属性或方法"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">5、其他属性或方法</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">闪亮ing</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

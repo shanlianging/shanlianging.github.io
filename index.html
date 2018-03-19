@@ -260,6 +260,454 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/Object-C_UI_UISegmentedControl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="闪亮ing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myAvatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闪亮∮天使">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/14/Object-C_UI_UISegmentedControl/" itemprop="url">Object-C_UI_UISegmentedControl</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T20:28:19+08:00">
+                2018-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/" itemprop="url" rel="index">
+                    <span itemprop="name">Object-C</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/UI/" itemprop="url" rel="index">
+                    <span itemprop="name">UI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="UISegmentedControl"><a href="#UISegmentedControl" class="headerlink" title="UISegmentedControl"></a>UISegmentedControl</h1><h4 id="1、继承"><a href="#1、继承" class="headerlink" title="1、继承"></a>1、继承</h4><p><strong>父类暴露的方法和属性都可以使用</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) <span class="class"><span class="keyword">@interface</span> <span class="title">UISegmentedControl</span> : <span class="title">UIControl</span> &lt;<span class="title">NSCoding</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="2、创建"><a href="#2、创建" class="headerlink" title="2、创建"></a>2、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *sl_array = @[<span class="string">@"第一页"</span>,<span class="string">@"第二页"</span>,<span class="string">@"第三页"</span>,<span class="string">@"第四页"</span>];</div><div class="line"><span class="built_in">UISegmentedControl</span> *sl_segmentedControl = [[<span class="built_in">UISegmentedControl</span> alloc] initWithItems:sl_array];</div><div class="line">sl_segmentedControl.center = <span class="keyword">self</span>.view.center;</div><div class="line">[<span class="keyword">self</span>.view addSubview:sl_segmentedControl];</div></pre></td></tr></table></figure>
+<h4 id="3、常用属性"><a href="#3、常用属性" class="headerlink" title="3、常用属性"></a>3、常用属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">sl_segmentedControl.backgroundColor = [<span class="built_in">UIColor</span> grayColor];  <span class="comment">// 设置背景色（小瑕疵：自己受到设置圆角的影响）</span></div><div class="line">sl_segmentedControl.tintColor = [<span class="built_in">UIColor</span> redColor]; <span class="comment">// 着色（边框、文字、选中后的颜色）</span></div><div class="line"></div><div class="line"><span class="comment">// 修改内容</span></div><div class="line">sl_segmentedControl.selectedSegmentIndex = <span class="number">0</span>;   <span class="comment">//设置选中标题</span></div><div class="line">[sl_segmentedControl setTitle:<span class="string">@"未完待续"</span> forSegmentAtIndex:<span class="number">3</span>]; <span class="comment">// 修改某一个标题</span></div><div class="line"><span class="built_in">NSString</span> *string = [sl_segmentedControl titleForSegmentAtIndex:<span class="number">3</span>];  <span class="comment">// 获取某一个下标的内容</span></div><div class="line"></div><div class="line">[sl_segmentedControl insertSegmentWithTitle:<span class="string">@"插入分段"</span> atIndex:<span class="number">3</span> animated:<span class="literal">YES</span>];  <span class="comment">//  插入分段</span></div><div class="line"></div><div class="line">[sl_segmentedControl removeSegmentAtIndex:<span class="number">2</span> animated:<span class="literal">YES</span>];  <span class="comment">// 移除分段</span></div><div class="line"></div><div class="line">sl_segmentedControl.apportionsSegmentWidthsByContent = <span class="literal">YES</span>; <span class="comment">// 自动为内容分配所占区域的大小</span></div></pre></td></tr></table></figure>
+<h4 id="4、为分段控制器添加方法"><a href="#4、为分段控制器添加方法" class="headerlink" title="4、为分段控制器添加方法"></a>4、为分段控制器添加方法</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1、添加方法</span></div><div class="line">[sl_segmentedControl addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(sl_changePage:) forControlEvents:<span class="built_in">UIControlEventValueChanged</span>];</div><div class="line"><span class="comment">// 2、方法</span></div><div class="line">- (<span class="keyword">void</span>)sl_changePage:(<span class="built_in">UISegmentedControl</span> *)seg &#123;</div><div class="line"><span class="comment">// 如果选择第二个分段</span></div><div class="line"><span class="keyword">if</span> (seg.selectedSegmentIndex == <span class="number">1</span>) &#123;</div><div class="line"><span class="comment">// 移除第一个页面</span></div><div class="line">[<span class="keyword">self</span>.firstView removeFromSuperview];</div><div class="line"><span class="comment">// 插入第二个页面（下标为0，防止覆盖分段控制器）</span></div><div class="line">[<span class="keyword">self</span>.view insertSubview:<span class="keyword">self</span>.secondView atIndex:<span class="number">0</span>];</div><div class="line">&#125;<span class="keyword">else</span> &#123;</div><div class="line"><span class="comment">// 移除第二个页面</span></div><div class="line">[<span class="keyword">self</span>.secondView removeFromSuperview];</div><div class="line">[<span class="keyword">self</span>.view insertSubview:<span class="keyword">self</span>.firstView atIndex:<span class="number">0</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="5、其他属性或方法"><a href="#5、其他属性或方法" class="headerlink" title="5、其他属性或方法"></a>5、其他属性或方法</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setTitle:(<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)title forSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;      <span class="comment">// can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil</span></div><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)titleForSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setImage:(<span class="keyword">nullable</span> <span class="built_in">UIImage</span> *)image forSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;       <span class="comment">// can only have image or title, not both. must be 0..#segments - 1 (or ignored). default is nil</span></div><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">UIImage</span> *)imageForSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setWidth:(<span class="built_in">CGFloat</span>)width forSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;         <span class="comment">// set to 0.0 width to autosize. default is 0.0</span></div><div class="line">- (<span class="built_in">CGFloat</span>)widthForSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setContentOffset:(<span class="built_in">CGSize</span>)offset forSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment; <span class="comment">// adjust offset of image or text inside the segment. default is (0,0)</span></div><div class="line">- (<span class="built_in">CGSize</span>)contentOffsetForSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setEnabled:(<span class="built_in">BOOL</span>)enabled forSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;        <span class="comment">// default is YES</span></div><div class="line">- (<span class="built_in">BOOL</span>)isEnabledForSegmentAtIndex:(<span class="built_in">NSUInteger</span>)segment;</div><div class="line"></div><div class="line"><span class="comment">/* For adjusting the position of a title or image within the given segment of a segmented control.</span></div><div class="line">*/</div><div class="line">- (<span class="keyword">void</span>)setContentPositionAdjustment:(<span class="built_in">UIOffset</span>)adjustment forSegmentType:(<span class="built_in">UISegmentedControlSegment</span>)leftCenterRightOrAlone barMetrics:(<span class="built_in">UIBarMetrics</span>)barMetrics <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">5</span>_0) <span class="built_in">UI_APPEARANCE_SELECTOR</span>;</div><div class="line">- (<span class="built_in">UIOffset</span>)contentPositionAdjustmentForSegmentType:(<span class="built_in">UISegmentedControlSegment</span>)leftCenterRightOrAlone barMetrics:(<span class="built_in">UIBarMetrics</span>)barMetrics <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">5</span>_0) <span class="built_in">UI_APPEARANCE_SELECTOR</span>;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/Object-C_UI_UIPageControl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="闪亮ing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myAvatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闪亮∮天使">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/14/Object-C_UI_UIPageControl/" itemprop="url">Object-C_UI_UIPageControl</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T20:18:24+08:00">
+                2018-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/" itemprop="url" rel="index">
+                    <span itemprop="name">Object-C</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/UI/" itemprop="url" rel="index">
+                    <span itemprop="name">UI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="UIPageControl"><a href="#UIPageControl" class="headerlink" title="UIPageControl"></a>UIPageControl</h1><h4 id="1、继承"><a href="#1、继承" class="headerlink" title="1、继承"></a>1、继承</h4><p><strong>父类暴露的方法和属性都可以使用</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) <span class="class"><span class="keyword">@interface</span> <span class="title">UIPageControl</span> : <span class="title">UIControl</span></span></div></pre></td></tr></table></figure>
+<h4 id="2、创建"><a href="#2、创建" class="headerlink" title="2、创建"></a>2、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIPageControl</span> *sl_pageControl = [[<span class="built_in">UIPageControl</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">50</span>)];</div><div class="line">sl_pageControl.center = <span class="keyword">self</span>.view.center;</div><div class="line">sl_pageControl.backgroundColor = [<span class="built_in">UIColor</span> brownColor];</div><div class="line">[<span class="keyword">self</span>.view addSubview:sl_pageControl];</div></pre></td></tr></table></figure>
+<h4 id="3、常用属性"><a href="#3、常用属性" class="headerlink" title="3、常用属性"></a>3、常用属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sl_pageControl.numberOfPages = <span class="number">5</span>;   <span class="comment">// 设置圆点个数</span></div><div class="line"></div><div class="line"><span class="comment">// 设置圆点的颜色</span></div><div class="line">sl_pageControl.currentPageIndicatorTintColor = [<span class="built_in">UIColor</span> redColor];  <span class="comment">// 选中颜色</span></div><div class="line">sl_pageControl.pageIndicatorTintColor = [<span class="built_in">UIColor</span> greenColor];  <span class="comment">// 未选中的颜色</span></div><div class="line"></div><div class="line">sl_pageControl.currentPage = <span class="number">3</span>;    <span class="comment">// 设置默认显示的圆点位置(默认从0开始)</span></div><div class="line"></div><div class="line">sl_pageControl.hidesForSinglePage = <span class="literal">YES</span>;    <span class="comment">// 当圆点个数仅省一个的时候，设置是否隐藏</span></div></pre></td></tr></table></figure>
+<h4 id="4、其他属性或方法"><a href="#4、其他属性或方法" class="headerlink" title="4、其他属性或方法"></a>4、其他属性或方法</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> defersCurrentPageDisplay;    <span class="comment">// if set, clicking to a new page won't update the currently displayed page until -updateCurrentPageDisplay is called. default is NO</span></div><div class="line">- (<span class="keyword">void</span>)updateCurrentPageDisplay;                      <span class="comment">// update page display to match the currentPage. ignored if defersCurrentPageDisplay is NO. setting the page value directly will update immediately</span></div><div class="line"></div><div class="line">- (<span class="built_in">CGSize</span>)sizeForNumberOfPages:(<span class="built_in">NSInteger</span>)pageCount;   <span class="comment">// returns minimum size required to display dots for given page count. can be used to size control if page count could change</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/Object-C_UI_UISwitch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="闪亮ing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myAvatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闪亮∮天使">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/09/Object-C_UI_UISwitch/" itemprop="url">Object-C_UI_UISwitch</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T20:13:18+08:00">
+                2018-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/" itemprop="url" rel="index">
+                    <span itemprop="name">Object-C</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/UI/" itemprop="url" rel="index">
+                    <span itemprop="name">UI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="UISwitch"><a href="#UISwitch" class="headerlink" title="UISwitch"></a>UISwitch</h1><h4 id="1、继承"><a href="#1、继承" class="headerlink" title="1、继承"></a>1、继承</h4><p><strong>父类暴露的方法和属性都可以使用</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) __TVOS_PROHIBITED <span class="class"><span class="keyword">@interface</span> <span class="title">UISwitch</span> : <span class="title">UIControl</span> &lt;<span class="title">NSCoding</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="2、创建"><a href="#2、创建" class="headerlink" title="2、创建"></a>2、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UISwitch</span> *sl_switch = [[<span class="built_in">UISwitch</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>)];  <span class="comment">// 这样创建，大小固定，如果需要改变大小，需要重写视图</span></div><div class="line">sl_switch.center = <span class="keyword">self</span>.view.center;</div><div class="line">[<span class="keyword">self</span>.view addSubview:sl_switch];</div></pre></td></tr></table></figure>
+<h4 id="3、属性"><a href="#3、属性" class="headerlink" title="3、属性"></a>3、属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">swi.tintColor = [<span class="built_in">UIColor</span> redColor]; <span class="comment">// 设置动画切换的颜色（边框颜色也会跟着改变）</span></div><div class="line">swi.onTintColor = [<span class="built_in">UIColor</span> magentaColor];   <span class="comment">// 打开状态显示的颜色</span></div><div class="line">swi.thumbTintColor = [<span class="built_in">UIColor</span> blackColor];  <span class="comment">// 滑块的颜色</span></div><div class="line">[swi setOn:<span class="literal">YES</span>];    <span class="comment">// 设置滑块的开关状态</span></div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%d"</span>,swi.isOn);  获取滑块的状态</div></pre></td></tr></table></figure>
+<h4 id="4、其他属性和方法"><a href="#4、其他属性和方法" class="headerlink" title="4、其他属性和方法"></a>4、其他属性和方法</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIImage</span> *onImage <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">6</span>_0) <span class="built_in">UI_APPEARANCE_SELECTOR</span>;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">UIImage</span> *offImage <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">6</span>_0) <span class="built_in">UI_APPEARANCE_SELECTOR</span>;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setOn:(<span class="built_in">BOOL</span>)on animated:(<span class="built_in">BOOL</span>)animated; <span class="comment">// does not send action</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/08/Object-C_UI_UISlider/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1320,434 +1768,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/Object-C_知识梳理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="闪亮ing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/myAvatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="闪亮∮天使">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/26/Object-C_知识梳理/" itemprop="url">Object-C_知识梳理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T10:07:10+08:00">
-                2018-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Object-C/" itemprop="url" rel="index">
-                    <span itemprop="name">Object-C</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="知识梳理"><a href="#知识梳理" class="headerlink" title="知识梳理"></a>知识梳理</h1><p>时间过去好长了，想对知识进行一下简单的梳理，形成一个书面形式，记录一下，同时便于回顾</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/12/Hexo 博客简易搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="闪亮ing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/myAvatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="闪亮∮天使">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/12/Hexo 博客简易搭建/" itemprop="url">Hexo 博客简易搭建</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-12T15:39:39+08:00">
-                2017-05-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/first/" itemprop="url" rel="index">
-                    <span itemprop="name">first</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Hexo-博客简易搭建"><a href="#Hexo-博客简易搭建" class="headerlink" title="Hexo 博客简易搭建"></a>Hexo 博客简易搭建</h1><h2 id="1-环境配置"><a href="#1-环境配置" class="headerlink" title="1. 环境配置"></a>1. 环境配置</h2><h3 id="1-1-配置Node-js"><a href="#1-1-配置Node-js" class="headerlink" title="1.1 配置Node.js"></a>1.1 配置Node.js</h3><p>使用其来生成静态页面，请移步到<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js官网</a>下载v6.1.0.3</p>
-<h3 id="1-2-配置Git"><a href="#1-2-配置Git" class="headerlink" title="1.2 配置Git"></a>1.2 配置Git</h3><p>使用其将本地生成的静态页面上传到GitHub上，我这使用的是Xcode的自带的Git，如果没有，请到<a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo官网</a>查看教程下载</p>
-<h2 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2. 安装Hexo"></a>2. 安装Hexo</h2><h3 id="2-1-安装"><a href="#2-1-安装" class="headerlink" title="2.1 安装"></a>2.1 安装</h3><p>在Node.js和Git都安装好后就可以安装Hexo了，在终端执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g hexo</div></pre></td></tr></table></figure></p>
-<h3 id="2-2-初始化"><a href="#2-2-初始化" class="headerlink" title="2.2 初始化"></a>2.2 初始化</h3><p>自己新建一个文件夹：如blog，cd到这个文件夹下，终端执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure></p>
-<h3 id="2-3-安装npm"><a href="#2-3-安装npm" class="headerlink" title="2.3 安装npm"></a>2.3 安装npm</h3><p>cd到blog文件夹下，终端执行如下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure></p>
-<h3 id="2-4-开启hexo服务器："><a href="#2-4-开启hexo服务器：" class="headerlink" title="2.4 开启hexo服务器："></a>2.4 开启hexo服务器：</h3><p>执行如下命令，开启hexo服务器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure></p>
-<p>此时终端会出现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
-<p>这时，浏览器中打开网址<a href="http://localhost:4000，如果能够打开网址，则说明成功，之后Ctrl+C停止" target="_blank" rel="external">http://localhost:4000，如果能够打开网址，则说明成功，之后Ctrl+C停止</a></p>
-<h2 id="3-关联GitHub"><a href="#3-关联GitHub" class="headerlink" title="3. 关联GitHub"></a>3. 关联GitHub</h2><h3 id="3-1-创建关联仓库"><a href="#3-1-创建关联仓库" class="headerlink" title="3.1 创建关联仓库"></a>3.1 创建关联仓库</h3><p>登录你的Github帐号，新建仓库，名为用户名.github.io(听说是固定写法)，如yourname.github.io</p>
-<h3 id="3-2-进行关联"><a href="#3-2-进行关联" class="headerlink" title="3.2 进行关联"></a>3.2 进行关联</h3><p>终端cd到blog文件夹下，vim打开_config.yml，命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim _config.yml</div></pre></td></tr></table></figure></p>
-<p>更改内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repository: https://github.com/gonghonglou/yuername.github.io.git</div><div class="line">branch: master</div></pre></td></tr></table></figure></p>
-<p>将yuername替换成你的名字就成<br><strong>记得，每个冒号后面都有一个空格</strong></p>
-<p>再执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<h2 id="4-上传和下载"><a href="#4-上传和下载" class="headerlink" title="4. 上传和下载"></a>4. 上传和下载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
-<p>再：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure></p>
-<p>每次都是这个命令<br>之后就可以用你的地址打开了</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/11/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="闪亮ing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/myAvatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="闪亮∮天使">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/11/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-11T15:15:40+08:00">
-                2017-05-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/first/" itemprop="url" rel="index">
-                    <span itemprop="name">first</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1790,7 +1817,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
