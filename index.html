@@ -260,6 +260,157 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/08/Object-C_UI_UISlider/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="闪亮ing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myAvatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闪亮∮天使">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/08/Object-C_UI_UISlider/" itemprop="url">Object-C_UI_UISlider</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T23:23:20+08:00">
+                2018-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/" itemprop="url" rel="index">
+                    <span itemprop="name">Object-C</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/UI/" itemprop="url" rel="index">
+                    <span itemprop="name">UI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="UISlider"><a href="#UISlider" class="headerlink" title="UISlider"></a>UISlider</h1><h4 id="1、继承"><a href="#1、继承" class="headerlink" title="1、继承"></a>1、继承</h4><p><strong>父类暴露的方法和属性都可以使用</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) __TVOS_PROHIBITED <span class="class"><span class="keyword">@interface</span> <span class="title">UISlider</span> : <span class="title">UIControl</span> &lt;<span class="title">NSCoding</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="2、创建"><a href="#2、创建" class="headerlink" title="2、创建"></a>2、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UISlider</span> *sl_slider = [[<span class="built_in">UISlider</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">300</span>, <span class="number">34</span>)];   <span class="comment">// 这样创建，高度是固定的，改变高度只能改变点击相应范围，改变不了大小，如果需要改变大小，需要重写视图</span></div><div class="line">sl_slider.center = <span class="keyword">self</span>.view.center;</div><div class="line">[<span class="keyword">self</span>.view addSubview:sl_slider];</div></pre></td></tr></table></figure>
+<p><strong>重写，但是不好调试，其实尽量还是给图片，或者自定义</strong><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 设置最大值</span></div><div class="line">- (<span class="built_in">CGRect</span>)maximumValueImageRectForBounds:(<span class="built_in">CGRect</span>)bounds</div><div class="line">&#123;</div><div class="line"><span class="keyword">return</span> <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="built_in">CGRectGetWidth</span>(<span class="keyword">self</span>.frame)/ <span class="number">2</span>, <span class="built_in">CGRectGetHeight</span>(<span class="keyword">self</span>.frame) / <span class="number">2</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 设置最小值</span></div><div class="line">- (<span class="built_in">CGRect</span>)minimumValueImageRectForBounds:(<span class="built_in">CGRect</span>)bounds</div><div class="line">&#123;</div><div class="line"><span class="keyword">return</span> <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="built_in">CGRectGetWidth</span>(<span class="keyword">self</span>.frame), <span class="built_in">CGRectGetHeight</span>(<span class="keyword">self</span>.frame));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 控制slider的宽和高，这个方法才是真正的改变slider滑道的高的</span></div><div class="line">- (<span class="built_in">CGRect</span>)trackRectForBounds:(<span class="built_in">CGRect</span>)bounds</div><div class="line">&#123;</div><div class="line"><span class="keyword">return</span> <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="built_in">CGRectGetWidth</span>(<span class="keyword">self</span>.frame), <span class="built_in">CGRectGetHeight</span>(<span class="keyword">self</span>.frame));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 改变滑块的触摸范围</span></div><div class="line">- (<span class="built_in">CGRect</span>)thumbRectForBounds:(<span class="built_in">CGRect</span>)bounds trackRect:(<span class="built_in">CGRect</span>)rect value:(<span class="keyword">float</span>)value</div><div class="line">&#123;</div><div class="line"><span class="keyword">return</span> <span class="built_in">CGRectInset</span>([<span class="keyword">super</span> thumbRectForBounds:bounds trackRect:rect value:value], <span class="number">10</span>, <span class="number">10</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="3、属性"><a href="#3、属性" class="headerlink" title="3、属性"></a>3、属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">// 滑块颜色</span></div><div class="line">sl_slider.minimumTrackTintColor = [<span class="built_in">UIColor</span> redColor];  <span class="comment">// 划过区域的颜色</span></div><div class="line">sl_slider.maximumTrackTintColor = [<span class="built_in">UIColor</span> yellowColor];   未划过区域的颜色</div><div class="line">sl_slider.thumbTintColor = [<span class="built_in">UIColor</span> blackColor];   <span class="comment">//设置滑块的颜色</span></div><div class="line"></div><div class="line"><span class="comment">// 设置滑块的图片</span></div><div class="line">[sl_slider setThumbImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"滑块"</span>] forState:<span class="built_in">UIControlStateNormal</span>];</div><div class="line"></div><div class="line"><span class="comment">// 设置滑块的视图</span></div><div class="line">sl_slider.minimumValueImage = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"声音"</span>];    <span class="comment">// 设置滑块左视图</span></div><div class="line">sl_slider.maximumValueImage = [<span class="built_in">UIImage</span> imageNamed:<span class="string">@"快进"</span>];    <span class="comment">// 设置滑块右视图</span></div><div class="line"></div><div class="line"><span class="comment">// 设置滑块的值</span></div><div class="line">sl_slider.minimumValue = <span class="number">0</span>;    <span class="comment">// 设置最小值</span></div><div class="line">sl_slider.maximumValue = <span class="number">100.0</span>;    <span class="comment">// 设置最大值</span></div><div class="line">sl_slider.value = <span class="number">50</span>;   <span class="comment">// 当前值-位置</span></div></pre></td></tr></table></figure>
+<h4 id="4、给滑块添加方法"><a href="#4、给滑块添加方法" class="headerlink" title="4、给滑块添加方法"></a>4、给滑块添加方法</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 添加方法</span></div><div class="line">[slider addTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(sliderAction:) forControlEvents:<span class="built_in">UIControlEventValueChanged</span>];</div><div class="line"><span class="comment">// 方法</span></div><div class="line">- (<span class="keyword">void</span>)sliderAction:(<span class="built_in">UISlider</span> *)slider &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="5、其他属性和方法"><a href="#5、其他属性和方法" class="headerlink" title="5、其他属性和方法"></a>5、其他属性和方法</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setThumbImage:(<span class="keyword">nullable</span> <span class="built_in">UIImage</span> *)image forState:(<span class="built_in">UIControlState</span>)state;</div><div class="line">- (<span class="keyword">void</span>)setMinimumTrackImage:(<span class="keyword">nullable</span> <span class="built_in">UIImage</span> *)image forState:(<span class="built_in">UIControlState</span>)state;</div><div class="line">- (<span class="keyword">void</span>)setMaximumTrackImage:(<span class="keyword">nullable</span> <span class="built_in">UIImage</span> *)image forState:(<span class="built_in">UIControlState</span>)state;</div><div class="line"></div><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">UIImage</span> *)thumbImageForState:(<span class="built_in">UIControlState</span>)state;</div><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">UIImage</span> *)minimumTrackImageForState:(<span class="built_in">UIControlState</span>)state;</div><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">UIImage</span> *)maximumTrackImageForState:(<span class="built_in">UIControlState</span>)state;</div><div class="line"></div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>,<span class="keyword">nonatomic</span>,<span class="keyword">readonly</span>) <span class="built_in">UIImage</span> *currentThumbImage;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>,<span class="keyword">nonatomic</span>,<span class="keyword">readonly</span>) <span class="built_in">UIImage</span> *currentMinimumTrackImage;</div><div class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>,<span class="keyword">nonatomic</span>,<span class="keyword">readonly</span>) <span class="built_in">UIImage</span> *currentMaximumTrackImage;</div><div class="line"></div><div class="line"><span class="comment">// lets a subclass lay out the track and thumb as needed</span></div><div class="line">- (<span class="built_in">CGRect</span>)minimumValueImageRectForBounds:(<span class="built_in">CGRect</span>)bounds;</div><div class="line">- (<span class="built_in">CGRect</span>)maximumValueImageRectForBounds:(<span class="built_in">CGRect</span>)bounds;</div><div class="line">- (<span class="built_in">CGRect</span>)trackRectForBounds:(<span class="built_in">CGRect</span>)bounds;</div><div class="line">- (<span class="built_in">CGRect</span>)thumbRectForBounds:(<span class="built_in">CGRect</span>)bounds trackRect:(<span class="built_in">CGRect</span>)rect value:(<span class="keyword">float</span>)value;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/Object-C_UI_UIImageVIew和动图/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1639,7 +1790,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
