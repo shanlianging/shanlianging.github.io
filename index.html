@@ -260,6 +260,157 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/Object-C_UI_UIScrollView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="闪亮ing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/myAvatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="闪亮∮天使">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/26/Object-C_UI_UIScrollView/" itemprop="url">Object-C_UI_UIScrollView</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T19:58:10+08:00">
+                2018-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/" itemprop="url" rel="index">
+                    <span itemprop="name">Object-C</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/UI/" itemprop="url" rel="index">
+                    <span itemprop="name">UI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="UIScrollView"><a href="#UIScrollView" class="headerlink" title="UIScrollView"></a>UIScrollView</h1><h4 id="1、继承"><a href="#1、继承" class="headerlink" title="1、继承"></a>1、继承</h4><p><strong>父类暴露的方法和属性都可以使用</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) <span class="class"><span class="keyword">@interface</span> <span class="title">UIScrollView</span> : <span class="title">UIView</span> &lt;<span class="title">NSCoding</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="2、创建"><a href="#2、创建" class="headerlink" title="2、创建"></a>2、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIScrollView</span> *sl_scrollView = [[<span class="built_in">UIScrollView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">300</span>, <span class="number">100</span>)];</div><div class="line">sl_scrollView.contentSize = <span class="built_in">CGSizeMake</span>(<span class="number">1000</span>, <span class="number">500</span>);</div><div class="line">[<span class="keyword">self</span>.view addSubview:sl_scrollView];</div></pre></td></tr></table></figure>
+<h4 id="3、常用属性"><a href="#3、常用属性" class="headerlink" title="3、常用属性"></a>3、常用属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">sl_scrollView.contentSize = <span class="built_in">CGSizeMake</span>(kWidth * <span class="number">3</span> , <span class="number">400</span>);  <span class="comment">// 设置显示的内容区域大小</span></div><div class="line"></div><div class="line"><span class="comment">// 设置是否显示滚动条</span></div><div class="line">sl_scrollView.showsHorizontalScrollIndicator = <span class="literal">NO</span>; <span class="comment">// 水平方向</span></div><div class="line">sl_scrollView.showsVerticalScrollIndicator = <span class="literal">NO</span>;   <span class="comment">// 垂直方向</span></div><div class="line"></div><div class="line"><span class="comment">// 设置是否反弹</span></div><div class="line">sl_scrollView.bounces = <span class="literal">NO</span>;    <span class="comment">// Yes反弹（默认），NO不反弹</span></div><div class="line"></div><div class="line">sl_scrollView.contentOffset = <span class="built_in">CGPointMake</span>(<span class="number">0</span>, <span class="number">100</span>);  <span class="comment">// 设置偏移量</span></div><div class="line">[sl_scrollView setContentOffset:<span class="built_in">CGPointMake</span>(<span class="number">100</span>, <span class="number">100</span>) animated:<span class="literal">YES</span>];  <span class="comment">// 带动画</span></div><div class="line"></div><div class="line"><span class="comment">// 设置是否整页滑动</span></div><div class="line">sl_scrollView.pagingEnabled = <span class="literal">YES</span>; <span class="comment">// YES整页滑动，NO不是整页滑动</span></div><div class="line"></div><div class="line"><span class="comment">// 缩放——配合代理方法</span></div><div class="line">sl_scrollView.minimumZoomScale = <span class="number">0.5</span>; <span class="comment">// 缩小最小比例</span></div><div class="line">sl_scrollView.maximumZoomScale = <span class="number">2</span>; <span class="comment">// 放大的最大比例</span></div></pre></td></tr></table></figure>
+<p><strong>经常和UIPageControl合用</strong></p>
+<h4 id="4、给UIPageControl设置方法控制UIScrollView"><a href="#4、给UIPageControl设置方法控制UIScrollView" class="headerlink" title="4、给UIPageControl设置方法控制UIScrollView"></a>4、给UIPageControl设置方法控制UIScrollView</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 1、设置方法</div><div class="line">[pageControl addTarget:self action:@selector(pageControlAction:) forControlEvents:UIControlEventValueChanged];</div><div class="line">// 2、方法</div><div class="line">- (void)pageControlAction:(UIPageControl *)pageControl &#123;</div><div class="line">self.scrollView.contentOffset = CGPointMake(pageControl.currentPage * kWidth, 0);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="5、给UIScrollView设置方法控制UIPageControl"><a href="#5、给UIScrollView设置方法控制UIPageControl" class="headerlink" title="5、给UIScrollView设置方法控制UIPageControl"></a>5、给UIScrollView设置方法控制UIPageControl</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">// 1、滚动触发</div><div class="line">- (void)scrollViewDidScroll:(UIScrollView *)scrollView &#123;</div><div class="line">&#125;</div><div class="line">// 2、滚动视图将要开始拖拽时触发</div><div class="line">- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView &#123;</div><div class="line">&#125;</div><div class="line">// 3、滚动视图已经结束拖拽时触发</div><div class="line">- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate &#123;</div><div class="line">&#125;</div><div class="line">// 4、滚动视图将要开始减速</div><div class="line">- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView &#123;</div><div class="line">&#125;</div><div class="line">// 5、滚动视图已经结束减速触发（控制UIScorllControl</div><div class="line">- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView &#123;</div><div class="line">CGFloat temp = scrollView.contentOffset.x / kWidth;</div><div class="line">self.pageControl.currentPage = (NSUInteger)temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 6、 缩放</div><div class="line">- (void)scrollViewDidZoom:(UIScrollView *)scrollView &#123;</div><div class="line">self.imgView.center = self.view.center;</div><div class="line">&#125;</div><div class="line">- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView &#123;</div><div class="line">// 需要返回缩放视图</div><div class="line">return self.imgView;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/Object-C_UI_UISegmentedControl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1617,157 +1768,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/Object-C_UI_根视图控制器和tag值/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="闪亮ing">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/myAvatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="闪亮∮天使">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/26/Object-C_UI_根视图控制器和tag值/" itemprop="url">Object-C_UI_根视图控制器和tag值</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T17:38:25+08:00">
-                2018-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Object-C/" itemprop="url" rel="index">
-                    <span itemprop="name">Object-C</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Object-C/UI/" itemprop="url" rel="index">
-                    <span itemprop="name">UI</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="根视图控制器和tag值"><a href="#根视图控制器和tag值" class="headerlink" title="根视图控制器和tag值"></a>根视图控制器和tag值</h1><h4 id="1、初始创建根试图控制器"><a href="#1、初始创建根试图控制器" class="headerlink" title="1、初始创建根试图控制器"></a>1、初始创建根试图控制器</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.window = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[<span class="built_in">UIScreen</span> mainScreen].bounds];</div><div class="line">[<span class="keyword">self</span>.window setBackgroundColor:[<span class="built_in">UIColor</span> whiteColor]];</div><div class="line">[<span class="keyword">self</span>.window makeKeyAndVisible];</div><div class="line">[<span class="keyword">self</span>.window setRootViewController:[RootViewController new]];</div></pre></td></tr></table></figure>
-<h4 id="2、添加并调用tag值"><a href="#2、添加并调用tag值" class="headerlink" title="2、添加并调用tag值"></a>2、添加并调用tag值</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 添加：</span></div><div class="line">[secondView setTag:<span class="number">1111</span>];</div><div class="line"><span class="comment">// 调用</span></div><div class="line">[<span class="keyword">self</span>.window viewWithTag:<span class="number">1111</span>];</div></pre></td></tr></table></figure>
-<h4 id="3、UIWindow关于Level"><a href="#3、UIWindow关于Level" class="headerlink" title="3、UIWindow关于Level"></a>3、UIWindow关于Level</h4><blockquote>
-<p>  UIKIT_EXTERN const UIWindowLevel UIWindowLevelNormal;<br>    UIKIT_EXTERN const UIWindowLevel UIWindowLevelAlert;<br>    UIKIT_EXTERN const UIWindowLevel UIWindowLevelStatusBar</p>
-</blockquote>
-<p><em>上面三个值分别是0.0,2000.0,1000.0</em><br><strong>大部分在App上使用的都是UIWindowLevelNormal，这也是每个Window被创建出来时的默认值</strong></p>
-<h4 id="4、获取keyWindow"><a href="#4、获取keyWindow" class="headerlink" title="4、获取keyWindow"></a>4、获取keyWindow</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIWindow</span> *keyWindow = [[<span class="built_in">UIApplication</span> sharedApplication] keyWindow];</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1817,7 +1817,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

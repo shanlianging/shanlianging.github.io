@@ -90,16 +90,16 @@
 
 
 
-<meta name="description" content="知识梳理时间过去好长了，想对知识进行一下简单的梳理，形成一个书面形式，记录一下，同时便于回顾">
+<meta name="description" content="UIScrollView1、继承父类暴露的方法和属性都可以使用 1NS_CLASS_AVAILABLE_IOS(2_0) @interface UIScrollView : UIView &amp;lt;NSCoding&amp;gt; 2、创建123UIScrollView *sl_scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Object-C_知识梳理">
-<meta property="og:url" content="http://yoursite.com/2018/02/26/Object-C_知识梳理/index.html">
+<meta property="og:title" content="Object-C_UI_UIScrollView">
+<meta property="og:url" content="http://yoursite.com/2018/03/26/Object-C_UI_UIScrollView/index.html">
 <meta property="og:site_name" content="闪亮∮天使">
-<meta property="og:description" content="知识梳理时间过去好长了，想对知识进行一下简单的梳理，形成一个书面形式，记录一下，同时便于回顾">
-<meta property="og:updated_time" content="2018-03-07T12:48:30.000Z">
+<meta property="og:description" content="UIScrollView1、继承父类暴露的方法和属性都可以使用 1NS_CLASS_AVAILABLE_IOS(2_0) @interface UIScrollView : UIView &amp;lt;NSCoding&amp;gt; 2、创建123UIScrollView *sl_scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0,">
+<meta property="og:updated_time" content="2018-03-26T11:58:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Object-C_知识梳理">
-<meta name="twitter:description" content="知识梳理时间过去好长了，想对知识进行一下简单的梳理，形成一个书面形式，记录一下，同时便于回顾">
+<meta name="twitter:title" content="Object-C_UI_UIScrollView">
+<meta name="twitter:description" content="UIScrollView1、继承父类暴露的方法和属性都可以使用 1NS_CLASS_AVAILABLE_IOS(2_0) @interface UIScrollView : UIView &amp;lt;NSCoding&amp;gt; 2、创建123UIScrollView *sl_scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0,">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/26/Object-C_知识梳理/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/26/Object-C_UI_UIScrollView/"/>
 
 
 
 
 
-  <title>Object-C_知识梳理 | 闪亮∮天使</title>
+  <title>Object-C_UI_UIScrollView | 闪亮∮天使</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/Object-C_知识梳理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/Object-C_UI_UIScrollView/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="闪亮ing">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Object-C_知识梳理</h1>
+          <h1 class="post-title" itemprop="name headline">Object-C_UI_UIScrollView</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T10:07:10+08:00">
-                2018-02-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T19:58:10+08:00">
+                2018-03-26
               </time>
             
 
@@ -316,6 +316,17 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Object-C/" itemprop="url" rel="index">
                     <span itemprop="name">Object-C</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Object-C/UI/" itemprop="url" rel="index">
+                    <span itemprop="name">UI</span>
                   </a>
                 </span>
 
@@ -348,7 +359,13 @@
       
 
       
-        <h1 id="知识梳理"><a href="#知识梳理" class="headerlink" title="知识梳理"></a>知识梳理</h1><p>时间过去好长了，想对知识进行一下简单的梳理，形成一个书面形式，记录一下，同时便于回顾</p>
+        <h1 id="UIScrollView"><a href="#UIScrollView" class="headerlink" title="UIScrollView"></a>UIScrollView</h1><h4 id="1、继承"><a href="#1、继承" class="headerlink" title="1、继承"></a>1、继承</h4><p><strong>父类暴露的方法和属性都可以使用</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NS_CLASS_AVAILABLE_IOS</span>(<span class="number">2</span>_0) <span class="class"><span class="keyword">@interface</span> <span class="title">UIScrollView</span> : <span class="title">UIView</span> &lt;<span class="title">NSCoding</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="2、创建"><a href="#2、创建" class="headerlink" title="2、创建"></a>2、创建</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIScrollView</span> *sl_scrollView = [[<span class="built_in">UIScrollView</span> alloc] initWithFrame:<span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">300</span>, <span class="number">100</span>)];</div><div class="line">sl_scrollView.contentSize = <span class="built_in">CGSizeMake</span>(<span class="number">1000</span>, <span class="number">500</span>);</div><div class="line">[<span class="keyword">self</span>.view addSubview:sl_scrollView];</div></pre></td></tr></table></figure>
+<h4 id="3、常用属性"><a href="#3、常用属性" class="headerlink" title="3、常用属性"></a>3、常用属性</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">sl_scrollView.contentSize = <span class="built_in">CGSizeMake</span>(kWidth * <span class="number">3</span> , <span class="number">400</span>);  <span class="comment">// 设置显示的内容区域大小</span></div><div class="line"></div><div class="line"><span class="comment">// 设置是否显示滚动条</span></div><div class="line">sl_scrollView.showsHorizontalScrollIndicator = <span class="literal">NO</span>; <span class="comment">// 水平方向</span></div><div class="line">sl_scrollView.showsVerticalScrollIndicator = <span class="literal">NO</span>;   <span class="comment">// 垂直方向</span></div><div class="line"></div><div class="line"><span class="comment">// 设置是否反弹</span></div><div class="line">sl_scrollView.bounces = <span class="literal">NO</span>;    <span class="comment">// Yes反弹（默认），NO不反弹</span></div><div class="line"></div><div class="line">sl_scrollView.contentOffset = <span class="built_in">CGPointMake</span>(<span class="number">0</span>, <span class="number">100</span>);  <span class="comment">// 设置偏移量</span></div><div class="line">[sl_scrollView setContentOffset:<span class="built_in">CGPointMake</span>(<span class="number">100</span>, <span class="number">100</span>) animated:<span class="literal">YES</span>];  <span class="comment">// 带动画</span></div><div class="line"></div><div class="line"><span class="comment">// 设置是否整页滑动</span></div><div class="line">sl_scrollView.pagingEnabled = <span class="literal">YES</span>; <span class="comment">// YES整页滑动，NO不是整页滑动</span></div><div class="line"></div><div class="line"><span class="comment">// 缩放——配合代理方法</span></div><div class="line">sl_scrollView.minimumZoomScale = <span class="number">0.5</span>; <span class="comment">// 缩小最小比例</span></div><div class="line">sl_scrollView.maximumZoomScale = <span class="number">2</span>; <span class="comment">// 放大的最大比例</span></div></pre></td></tr></table></figure>
+<p><strong>经常和UIPageControl合用</strong></p>
+<h4 id="4、给UIPageControl设置方法控制UIScrollView"><a href="#4、给UIPageControl设置方法控制UIScrollView" class="headerlink" title="4、给UIPageControl设置方法控制UIScrollView"></a>4、给UIPageControl设置方法控制UIScrollView</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 1、设置方法</div><div class="line">[pageControl addTarget:self action:@selector(pageControlAction:) forControlEvents:UIControlEventValueChanged];</div><div class="line">// 2、方法</div><div class="line">- (void)pageControlAction:(UIPageControl *)pageControl &#123;</div><div class="line">self.scrollView.contentOffset = CGPointMake(pageControl.currentPage * kWidth, 0);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="5、给UIScrollView设置方法控制UIPageControl"><a href="#5、给UIScrollView设置方法控制UIPageControl" class="headerlink" title="5、给UIScrollView设置方法控制UIPageControl"></a>5、给UIScrollView设置方法控制UIPageControl</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">// 1、滚动触发</div><div class="line">- (void)scrollViewDidScroll:(UIScrollView *)scrollView &#123;</div><div class="line">&#125;</div><div class="line">// 2、滚动视图将要开始拖拽时触发</div><div class="line">- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView &#123;</div><div class="line">&#125;</div><div class="line">// 3、滚动视图已经结束拖拽时触发</div><div class="line">- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate &#123;</div><div class="line">&#125;</div><div class="line">// 4、滚动视图将要开始减速</div><div class="line">- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView &#123;</div><div class="line">&#125;</div><div class="line">// 5、滚动视图已经结束减速触发（控制UIScorllControl</div><div class="line">- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView &#123;</div><div class="line">CGFloat temp = scrollView.contentOffset.x / kWidth;</div><div class="line">self.pageControl.currentPage = (NSUInteger)temp;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 6、 缩放</div><div class="line">- (void)scrollViewDidZoom:(UIScrollView *)scrollView &#123;</div><div class="line">self.imgView.center = self.view.center;</div><div class="line">&#125;</div><div class="line">- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView &#123;</div><div class="line">// 需要返回缩放视图</div><div class="line">return self.imgView;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -385,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/12/Hexo 博客简易搭建/" rel="next" title="Hexo 博客简易搭建">
-                <i class="fa fa-chevron-left"></i> Hexo 博客简易搭建
+              <a href="/2018/03/14/Object-C_UI_UISegmentedControl/" rel="next" title="Object-C_UI_UISegmentedControl">
+                <i class="fa fa-chevron-left"></i> Object-C_UI_UISegmentedControl
               </a>
             
           </div>
@@ -394,10 +411,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/26/Object-C_UI_根视图控制器和tag值/" rel="prev" title="Object-C_UI_根视图控制器和tag值">
-                Object-C_UI_根视图控制器和tag值 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -546,7 +559,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#知识梳理"><span class="nav-number">1.</span> <span class="nav-text">知识梳理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UIScrollView"><span class="nav-number">1.</span> <span class="nav-text">UIScrollView</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、继承"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1、继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、创建"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2、创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、常用属性"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3、常用属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、给UIPageControl设置方法控制UIScrollView"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">4、给UIPageControl设置方法控制UIScrollView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、给UIScrollView设置方法控制UIPageControl"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">5、给UIScrollView设置方法控制UIPageControl</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
